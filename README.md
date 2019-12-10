@@ -103,7 +103,7 @@ Interpolation
 ## Danger
 *Keep in mind that buffering unescaped content into your templates can be mighty risky if that content comes fresh from your users. Never trust user input!*
 
-##Tag Interpolation
+## Tag Interpolation
 ```#[a(href='https://google.com')]```
 
 Iteration
@@ -202,7 +202,7 @@ mixin link(href, name)
 ## Note
 *The values in attributes are already escaped so you should use != to avoid escaping them a second time.*
 
-- You can also use with &attributes
+- You can also use with `&attributes`
 ```jade
 mixin link(href, name)
   a(href=href)&attributes(attributes)= name
@@ -229,6 +229,14 @@ Three common ways.
 
 ## Piped Text
 Prefix the line with a | character (pronounced “pipe”).
+```jade
+| Plain text can include <strong>html</strong>
+p
+| It must always be on its own line
+// Output HTML
+Plain text can include <strong>html</strong>
+<p>It must always be on its own line</p>
+```
 
 ## Inline in a Tag
 Put text in a tag just by adding it inline after a space.
@@ -237,7 +245,7 @@ p Plain text can include <strong>HTML</strong>
 ```
 
 ## Block in a Tab
-Add a . after the tag (with no preceding space)
+Add a `.` after the tag (with no preceding space)
 ```jade
 script.
 if (usingJade)
